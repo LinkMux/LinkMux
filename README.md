@@ -13,3 +13,17 @@ A url shortener project.
     - JSON PHP Extension
     - BCMath PHP Extension
 - [Composer](https://getcomposer.org/)
+
+# Install
+...
+
+# Development
+**Run server**
+```
+php artisan serve
+```
+
+**Compiling Assets**
+```
+npm run watch
+```
