@@ -13,6 +13,7 @@ A url shortener project.
     - JSON PHP Extension
     - BCMath PHP Extension
 - [Composer](https://getcomposer.org/)
+- node >= v9.9.0
 
 # Install
 ...
