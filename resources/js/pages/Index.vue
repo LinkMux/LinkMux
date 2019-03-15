@@ -3,6 +3,7 @@
         <h1>Index</h1>
         <p class="lead">
             {{ $t("title.index") }}
+            <font-awesome-icon icon="expand"/>
         </p>
 
     </div>
