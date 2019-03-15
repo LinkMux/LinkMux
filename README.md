@@ -19,12 +19,20 @@ A url shortener project.
 ...
 
 # Development
+**Install Package**
+```
+cp .env.example .env
+composer install
+php artisan key:generate
+php artisan migrate
+yarn install
+```
 **Run server**
 ```
 php artisan serve
 ```
 
-**Compiling Assets**
+**Run compiling assets**
 ```
-npm run watch
+yarn run watch
 ```
