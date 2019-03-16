@@ -36,3 +36,7 @@ php artisan serve
 ```
 yarn run watch
 ```
+
+**Default account info**
+- Accound: admin@lmux.dev
+- Password: Ab123456
