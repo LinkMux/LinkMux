@@ -11,9 +11,9 @@
 |
 */
 
-Route::get('/dashboard/{path}', 'IndexController@index');
-Route::get('/dashboard', 'IndexController@index');
-
 Route::group(['prefix' => 'api'], function () {
-    
+
 });
+
+Route::get("{path}", "IndexController@index")
+    ->where("path", "(.*)");
