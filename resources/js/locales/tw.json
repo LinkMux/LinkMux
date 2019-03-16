@@ -1,5 +1,12 @@
 {
   "title": {
-    "index": "index"
+    "index": "index",
+    "login": "登入"
+  },
+  "text": {
+    "email": "電子郵件",
+    "password": "密碼",
+    "createAccount": "建立帳號",
+    "login": "登入"
   }
 }

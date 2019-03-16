@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import Index from "./pages/Index";
+import Login from "./pages/Login";
 import VueRouter from "vue-router";
 import Router from 'vue-router';
 import Meta from 'vue-meta';
@@ -14,6 +15,11 @@ const router = new VueRouter({
             path: '/',
             name: 'home',
             component: Index
+        },
+        {
+            path: '/login',
+            name: 'login',
+            component: Login
         },
         {
             path: '*',
