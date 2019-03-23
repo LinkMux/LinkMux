@@ -11,8 +11,14 @@
 |
 */
 
-Route::get('/auth/login', 'Auth\LoginController@showLoginForm');
+
 Route::get("/", "MuxController@dashboard");
+
+Route::group(['prefix' => 'auth'], function () {
+    Route::get('/login', 'Auth\LoginController@showLoginForm');
+    Route::post('/login', 'Auth\LoginController@login');
+    Route::get('/logout', 'Auth\LoginController@logout');
+});
 
 Route::group(['prefix' => 'api'], function () {
 

@@ -21,17 +21,23 @@
             <div class="row h-100 align-items-center">
                 <div class="col-md-4">
                     <p><b>Login to acces your account</b></p>
-                    <form>
+                    @if (session('error'))
+                        <div class="alert alert-danger" role="alert">
+                            {{ session('error') }}
+                        </div>
+                    @endif
+                    <form method="post">
+                        {{ csrf_field() }}
                         <div class="form-group">
                             <label for="inputEmail">Email</label>
-                            <input type="email" id="inputEmail" class="form-control" required autofocus/>
+                            <input type="email" id="inputEmail" name="email" class="form-control" required autofocus/>
                         </div>
                         <div class="form-group">
                             <label for="inputPassword">Password</label>
-                            <input type="password" id="inputPassword" class="form-control" required/>
+                            <input type="password" id="inputPassword" name="password" class="form-control" required/>
                         </div>
                         <div class="form-group">
-                            <button type="button" class="btn btn-primary">Login</button>
+                            <button type="submit" class="btn btn-primary">Login</button>
                         </div>
                         <a href="#">Create an account</a>
                     </form>

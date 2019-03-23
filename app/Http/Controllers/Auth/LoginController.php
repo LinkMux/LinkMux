@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Http\Request;
 
 class LoginController extends Controller
 {
@@ -25,7 +26,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/dashboard';
 
     /**
      * Create a new controller instance.
@@ -36,4 +37,25 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
+
+    /**
+     * Return the failed login response instance.
+     * 
+     * @return Response
+     */
+    protected function sendFailedLoginResponse(Request $request)
+    {
+        return back()->withInput()->with('error', 'Login Failed.');
+    }
+
+    /**
+     * Redirect to login page after logout
+     * 
+     * @return Response
+     */
+    protected function loggedOut(Request $request)
+    {
+        return redirect()->intended('/auth/login');
+    }
+
 }
