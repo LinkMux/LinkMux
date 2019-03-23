@@ -14,13 +14,13 @@
                 color:#fff;
             }
         </style>
-        <title>Login | LinkMux</title>
+        <title>{{ trans('auth.login') }} | LinkMux</title>
     </head>
     <body class="h-100">
         <div class="container-fluid h-100">
             <div class="row h-100 align-items-center">
                 <div class="col-md-4">
-                    <p><b>Login to acces your account</b></p>
+                    <p><b>{{ trans('auth.intro')}} </b></p>
                     @if (session('error'))
                         <div class="alert alert-danger" role="alert">
                             {{ session('error') }}
@@ -29,17 +29,17 @@
                     <form method="post">
                         {{ csrf_field() }}
                         <div class="form-group">
-                            <label for="inputEmail">Email</label>
+                            <label for="inputEmail">{{ trans('auth.email') }}</label>
                             <input type="email" id="inputEmail" name="email" class="form-control" required autofocus/>
                         </div>
                         <div class="form-group">
-                            <label for="inputPassword">Password</label>
+                            <label for="inputPassword">{{ trans('auth.password') }}</label>
                             <input type="password" id="inputPassword" name="password" class="form-control" required/>
                         </div>
                         <div class="form-group">
-                            <button type="submit" class="btn btn-primary">Login</button>
+                            <button type="submit" class="btn btn-primary">{{ trans('auth.login') }}</button>
                         </div>
-                        <a href="#">Create an account</a>
+                        <a href="#">{{ trans('auth.create') }}</a>
                     </form>
                 </div>
                 <div class="col-md-8 d-none h-100 d-md-table right-box">  
