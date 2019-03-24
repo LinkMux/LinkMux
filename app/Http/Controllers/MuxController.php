@@ -36,7 +36,7 @@ class MuxController extends Controller
             return abort(404);
         }
 
-        return redirect($shortlink->target);
+        return redirect($shortlink->original_url);
     }
 
     /**

@@ -1,9 +1,25 @@
-import * as types from './mutationTypes'
+import axios from "axios";
 
-const state = {};
+const state = {
+    list: [],
+};
 
-const actions = {};
-const mutations = {};
+const actions = {
+    getList: (context) => {
+        axios.get('/api/shortlink')
+            .then(response => {
+                context.commit('getList', response.data.data);
+            })
+            .catch(error => {
+                console.log(error.response);
+            });
+    }
+};
+const mutations = {
+    getList: (state, payload) => {
+        state.list = payload;
+    }
+};
 
 const getters = {};
 

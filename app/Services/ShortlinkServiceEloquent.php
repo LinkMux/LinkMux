@@ -24,7 +24,7 @@ class ShortlinkServiceEloquent implements ShortlinkService
 
     public function findPublicShortlink(string $source): ?Shortlink
     {
-        return $this->repository->findByField("source", $source)->first();
+        return $this->repository->findByField("hash", $source)->first();
     }
 
     public function getShortlink(User $user): Collection

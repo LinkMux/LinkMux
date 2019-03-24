@@ -13,7 +13,6 @@ Vue.component('font-awesome-icon', FontAwesomeIcon);
 
 // Include All Components
 const files = require.context('./components', true, /\.vue$/i);
-
 files.keys().forEach(key => {
     Vue.component(key.split('/').pop().split('.')[0], files(key).default);
 });
