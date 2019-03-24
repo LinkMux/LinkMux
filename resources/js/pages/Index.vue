@@ -14,7 +14,7 @@
     export default {
         metaInfo() {
             return {
-                title: "Index web title",
+                title: this.$i18n.t('title.index'),
                 meta: []
             }
         },

@@ -1,6 +1,7 @@
 {
   "title": {
-    "index": "index",
+    "base": "LinkMux",
+    "index": "Home",
     "login": "登入"
   },
   "text": {
