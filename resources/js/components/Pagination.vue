@@ -32,6 +32,8 @@
     </nav>
 </template>
 
+<!--Example: <Pagination :pageInfo="shorts" @onChangePage="getList"/> -->
+
 <script>
     export default {
         props: ['pageInfo'],
