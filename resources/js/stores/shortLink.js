@@ -5,14 +5,14 @@ const state = {
 };
 
 const actions = {
-    getList: (context) => {
-        axios.get('/api/shortlink')
-            .then(response => {
-                context.commit('getList', response.data.data);
-            })
-            .catch(error => {
-                console.log(error.response);
-            });
+    getList: (context, page) => {
+        axios.get('/api/shortlink', {
+            params: {page: page}
+        }).then(response => {
+            context.commit('getList', response.data.data);
+        }).catch(error => {
+            console.log(error.response);
+        });
     }
 };
 const mutations = {

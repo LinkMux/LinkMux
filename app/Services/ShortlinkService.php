@@ -3,6 +3,7 @@ namespace App\Services;
 
 use App\Models\Shortlink;
 use App\Models\User;
+use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Support\Collection;
 
 interface ShortlinkService
@@ -20,5 +21,5 @@ interface ShortlinkService
      * @param User $user
      * @return Collection
      */
-    public function getShortlink(User $user): Collection;
+    public function getShortlink(User $user): LengthAwarePaginator;
 }

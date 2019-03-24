@@ -4,6 +4,7 @@ namespace App\Services;
 use App\Models\Shortlink;
 use App\Models\User;
 use App\Repositories\ShortlinkRepository;
+use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Support\Collection;
 
 class ShortlinkServiceEloquent implements ShortlinkService
@@ -27,8 +28,8 @@ class ShortlinkServiceEloquent implements ShortlinkService
         return $this->repository->findByField("hash", $source)->first();
     }
 
-    public function getShortlink(User $user): Collection
+    public function getShortlink(User $user, $limit = 15): LengthAwarePaginator
     {
-        return $this->repository->findByField("user_id", $user->id);
+        return $this->repository->getUserShortlink($user, $limit);
     }
 }
