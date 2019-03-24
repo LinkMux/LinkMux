@@ -40,3 +40,48 @@ yarn run watch
 **Default account info**
 - Accound: admin@lmux.dev
 - Password: Ab123456
+
+**Create Repository**
+1. Run command generate
+```
+php artisan make:repository <name>
+```
+[Doc](https://github.com/andersao/l5-repository)
+2. Bind
+RepositoryServiceProvider.php
+```php
+public function boot()
+{
+    // ...
+    $this->app->bind(<name>Repository::class, <name>RepositoryEloquent::class);
+    //:end-bindings:
+}
+```
+3. Use
+```php
+public function __construct(<name>Repository $repository)
+{
+    $this->repository = $repository;
+}
+```
+
+**Create Service**
+1.Create interface and implementation
+
+2. Bind
+RepositoryServiceProvider.php
+```php
+public function boot()
+{
+    // ...
+    $this->app->bind(<name>Service::class, <name>ServiceEloquent::class);
+    //:end-bindings:
+}
+```
+3. Use
+```php
+public function __construct(<name>Service $service)
+{
+    $this->service = $service;
+}
+```
