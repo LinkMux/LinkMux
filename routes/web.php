@@ -21,7 +21,7 @@ Route::group(['prefix' => 'auth'], function () {
 });
 
 Route::group(['prefix' => 'api'], function () {
-
+    Route::resource('/shortlink', 'ShortlinkController');
 });
 
 Route::group(['prefix' => 'dashboard'], function () {

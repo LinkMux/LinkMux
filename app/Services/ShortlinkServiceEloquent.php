@@ -2,7 +2,9 @@
 namespace App\Services;
 
 use App\Models\Shortlink;
+use App\Models\User;
 use App\Repositories\ShortlinkRepository;
+use Illuminate\Support\Collection;
 
 class ShortlinkServiceEloquent implements ShortlinkService
 {
@@ -23,5 +25,10 @@ class ShortlinkServiceEloquent implements ShortlinkService
     public function findPublicShortlink(string $source): ?Shortlink
     {
         return $this->repository->findByField("source", $source)->first();
+    }
+
+    public function getShortlink(User $user): Collection
+    {
+        return $this->repository->findByField("user_id", $user->id);
     }
 }

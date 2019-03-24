@@ -2,6 +2,8 @@
 namespace App\Services;
 
 use App\Models\Shortlink;
+use App\Models\User;
+use Illuminate\Support\Collection;
 
 interface ShortlinkService
 {
@@ -12,4 +14,11 @@ interface ShortlinkService
      * @return Shortlink
      */
     public function findPublicShortlink(string $source): ?Shortlink;
+
+    /**
+     * 取得使用者所屬的 ShortLink
+     * @param User $user
+     * @return Collection
+     */
+    public function getShortlink(User $user): Collection;
 }
