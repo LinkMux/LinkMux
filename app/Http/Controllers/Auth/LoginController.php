@@ -45,7 +45,7 @@ class LoginController extends Controller
      */
     protected function sendFailedLoginResponse(Request $request)
     {
-        return back()->withInput()->with('error', 'Login Failed.');
+        return back()->withInput()->with('error', __('auth.failed'));
     }
 
     /**
