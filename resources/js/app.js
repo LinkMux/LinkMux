@@ -11,8 +11,12 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 library.add(fas);
 Vue.component('font-awesome-icon', FontAwesomeIcon);
 
-const files = require.context('./', true, /\.vue$/i);
-files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default));
+// Include All Components
+const files = require.context('./components', true, /\.vue$/i);
+
+files.keys().forEach(key => {
+    Vue.component(key.split('/').pop().split('.')[0], files(key).default);
+});
 
 const vue = new Vue({
     el: '#app',

@@ -1,16 +1,16 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import shortLink from "./stores/shortLink";
 
 Vue.use(Vuex);
 
-export default new Vuex.Store({
-    state: {
+const isDebug = process.env.NODE_ENV !== 'production';
 
+const store = new Vuex.Store({
+    modules: {
+        shortLink: shortLink
     },
-    mutations: {
+    strict: isDebug
+});
 
-    },
-    actions: {
-
-    }
-})
+export default store
