@@ -2,7 +2,9 @@
     <div class="h-100">
         <Navbar/>
         <Sidebar/>
-        <router-view class="main"></router-view>
+        <div id="main" class="main">
+            <router-view></router-view>
+        </div>
     </div>
 </template>
 
@@ -39,5 +41,10 @@
         width: $main-width;
         margin-left: $sidebar-width;
         margin-top: 15px;
+    }
+
+    .main-extend {
+        width: $main-extend-width;
+        margin-left: $sidebar-extend-width;
     }
 </style>

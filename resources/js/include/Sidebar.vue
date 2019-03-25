@@ -37,10 +37,12 @@
                     // 移除展開 Menu
                     self.sidebarExtend = false;
                     $("#sidebar").removeClass("sidebar-extend");
+                    $("#main").removeClass("main-extend");
                 } else {
                     // 展開 Menu
                     self.sidebarExtend = true;
                     $("#sidebar").addClass("sidebar-extend");
+                    $("#main").addClass("main-extend");
                 }
             }
         },
@@ -68,6 +70,8 @@
         font-size: 18px;
         line-height: 18px;
         position: absolute;
+        z-index: 1000;
+        transition: transform .3s ease-in-out, width .3s ease-in-out;
 
         .sidebar-menu {
             width: 100%;
@@ -84,11 +88,14 @@
                 .icon {
                     width: $sidebar-width;
                     text-align: center;
+                    float: left;
                 }
 
                 .sidebar-menu-text {
+                    width: calc(#{$sidebar-extend-width} - #{$sidebar-width});
                     text-align: left;
                     display: none;
+                    position: absolute;
                 }
                 
                 &:hover {
@@ -119,6 +126,7 @@
         .sidebar-menu-text {
             width: calc(#{$sidebar-extend-width} - #{$sidebar-width});
             display: inline !important;
+            //opacity:1;
         }
     }
 </style>
