@@ -6,8 +6,8 @@ use Illuminate\Support\Str;
 
 $factory->define(App\Models\Shortlink::class, function (Faker $faker) {
     return [
-        'source' => Str::random(5),
-        'target' => $faker->url,
+        'hash' => Str::random(5),
+        'original_url' => $faker->url,
         'user_id' => User::inRandomOrder()->first()->id
     ];
 });
