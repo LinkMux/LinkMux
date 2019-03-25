@@ -9,8 +9,8 @@
     sudo git pull
     sudo composer install --no-plugins --no-scripts
     sudo composer install --optimize-autoloader
-    npm install
-    npm run prod
+    yarn install
+    yarn run prod
     php artisan migrate
     php artisan config:cache
     php artisan route:cache

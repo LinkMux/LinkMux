@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import Index from "./pages/Index";
-import ShortLink from "./pages/shortLink";
+import ShortLink from "./pages/shortLink/Index";
 import VueRouter from "vue-router";
 import Router from 'vue-router';
 import Meta from 'vue-meta';
