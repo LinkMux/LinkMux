@@ -124,6 +124,12 @@ return [
     'cipher' => 'AES-256-CBC',
 
     /*
+     * Application Config
+     */
+    'short_hash_length' => env('SHORT_HASH_LENGTH', 5),
+
+
+    /*
     |--------------------------------------------------------------------------
     | Autoloaded Service Providers
     |--------------------------------------------------------------------------
