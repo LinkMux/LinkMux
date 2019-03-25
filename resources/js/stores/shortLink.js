@@ -13,6 +13,15 @@ const actions = {
         }).catch(error => {
             console.log(error.response);
         });
+    },
+    store: (context, originalUrl) => {
+        axios.post('/api/shortlink', {
+            original_url: originalUrl,
+        }).then(response => {
+            context.dispatch("getList");
+        }).catch(error => {
+            console.log(error.response);
+        });
     }
 };
 const mutations = {

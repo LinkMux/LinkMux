@@ -1,12 +1,18 @@
 <template>
     <div class="container">
         <h1>{{ $t("title.shortLink") }}</h1>
-        <Table/>
+        <div class="row justify-content-center">
+            <Adder class="col-12 col-sm-10 col-md-8"></Adder>
+            <div class="col-12 mt-3">
+                <Table/>
+            </div>
+        </div>
     </div>
 </template>
 
 <script>
     import Table from "./Table";
+    import Adder from "./Adder";
 
     export default {
         metaInfo() {
@@ -16,21 +22,13 @@
             }
         },
         data() {
-            return {
-
-            }
+            return {}
         },
-        methods: {
-
-        },
-        computed: {
-
-        },
-        watch: {
-
-        },
+        methods: {},
+        computed: {},
+        watch: {},
         components: {
-            Table
+            Table, Adder
         },
         mounted() {
 

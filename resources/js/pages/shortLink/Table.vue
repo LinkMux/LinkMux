@@ -2,7 +2,7 @@
     <div class="row justify-content-center">
         <div class="col-12">
             <div class="table-responsive">
-                <table class="table table-sm table-striped">
+                <table class="table table-striped">
                     <thead>
                     <tr>
                         <th scope="col">短網址</th>

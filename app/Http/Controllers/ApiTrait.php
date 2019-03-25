@@ -48,4 +48,14 @@ trait ApiTrait
     {
         return $this->returnApiResponse($message, $data, false, 404);
     }
+    /**
+     * Return 400
+     * @param string $message
+     * @param array  $data
+     * @return \Illuminate\Http\JsonResponse
+     */
+    protected function return412Response($message = 'The given data was invalid.', $data = [])
+    {
+        return $this->returnApiResponse($message, $data, false, 400);
+    }
 }

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ShortlinkRequest;
 use App\Models\Shortlink;
 use App\Models\User;
 use App\Services\ShortlinkService;
@@ -42,24 +43,17 @@ class ShortlinkController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @param ShortlinkRequest $request
+     * @return \Illuminate\Http\JsonResponse
      */
-    public function store(Request $request)
+    public function store(ShortlinkRequest $request)
     {
-        //
+        $user = auth()->user();
+        $this->shortlinkService->store($user, $request->validated());
+
+        return $this->returnSuccess("Success");
     }
 
     /**
@@ -69,17 +63,6 @@ class ShortlinkController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show(Shortlink $shortlink)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Shortlink  $shortlink
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Shortlink $shortlink)
     {
         //
     }
