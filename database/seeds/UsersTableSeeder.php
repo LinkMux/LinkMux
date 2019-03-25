@@ -1,6 +1,6 @@
 <?php
 
-use App\User;
+use App\Models\User;
 use Illuminate\Database\Seeder;
 
 class UsersTableSeeder extends Seeder
@@ -17,6 +17,6 @@ class UsersTableSeeder extends Seeder
             'email' => 'admin@lmux.dev',
             'password' => Hash::make('Ab123456'),
         ]);
-        factory(App\User::class, 10)->create();
+        factory(User::class, 10)->create();
     }
 }

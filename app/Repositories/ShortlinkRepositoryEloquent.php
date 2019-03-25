@@ -4,10 +4,10 @@ namespace App\Repositories;
 
 use App\Models\Shortlink;
 use App\Models\User;
-use Prettus\Repository\Eloquent\BaseRepository;
-use Prettus\Repository\Criteria\RequestCriteria;
-use Illuminate\Pagination\LengthAwarePaginator;
 use App\Validators\ShortlinkValidator;
+use Illuminate\Pagination\LengthAwarePaginator;
+use Prettus\Repository\Criteria\RequestCriteria;
+use Prettus\Repository\Eloquent\BaseRepository;
 
 /**
  * Class ShortlinkRepositoryEloquent.

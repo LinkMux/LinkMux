@@ -5,7 +5,6 @@ use App\Models\Shortlink;
 use App\Models\User;
 use App\Repositories\ShortlinkRepository;
 use Illuminate\Pagination\LengthAwarePaginator;
-use Illuminate\Support\Collection;
 
 class ShortlinkServiceEloquent implements ShortlinkService
 {

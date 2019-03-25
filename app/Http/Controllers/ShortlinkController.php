@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Shortlink;
 use App\Models\User;
 use App\Services\ShortlinkService;
-use App\Shortlink;
 use Illuminate\Http\Request;
 
 class ShortlinkController extends Controller
@@ -65,7 +65,7 @@ class ShortlinkController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Shortlink  $shortlink
+     * @param  \App\Models\Shortlink  $shortlink
      * @return \Illuminate\Http\Response
      */
     public function show(Shortlink $shortlink)
@@ -76,7 +76,7 @@ class ShortlinkController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Shortlink  $shortlink
+     * @param  \App\Models\Shortlink  $shortlink
      * @return \Illuminate\Http\Response
      */
     public function edit(Shortlink $shortlink)
@@ -88,7 +88,7 @@ class ShortlinkController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Shortlink  $shortlink
+     * @param  \App\Models\Shortlink  $shortlink
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Shortlink $shortlink)
@@ -99,7 +99,7 @@ class ShortlinkController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Shortlink  $shortlink
+     * @param  \App\Models\Shortlink  $shortlink
      * @return \Illuminate\Http\Response
      */
     public function destroy(Shortlink $shortlink)

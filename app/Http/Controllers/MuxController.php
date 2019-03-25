@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Shortlink;
 use App\Services\ShortlinkService;
-use Illuminate\Http\Request;
 
 class MuxController extends Controller
 {

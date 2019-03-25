@@ -11,6 +11,6 @@ class ShortlinksTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\Shortlink::class, 100)->create();
+        factory(App\Models\Shortlink::class, 100)->create();
     }
 }
