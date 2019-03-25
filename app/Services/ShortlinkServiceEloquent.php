@@ -62,7 +62,7 @@ class ShortlinkServiceEloquent implements ShortlinkService
         $searchTime = 0;
         $increaseLength = 0;
         do {
-            $hash = Str::random(env('SHORT_HASH_LENGTH') + $increaseLength);
+            $hash = Str::random(env('SHORT_HASH_LENGTH', 5) + $increaseLength);
             $searchTime++;
             if ($searchTime >= $this->maxHashSearchTime) {
                 $increaseLength++;
