@@ -14,7 +14,7 @@
                     <tr v-for="item in shorts.data">
                         <td class="text-nowrap text-monospace">
                             <a :href="item.full_short_url" target="_blank">
-                                {{ item.full_short_url.replace(/^http:\/\//, '') }}
+                                {{ item.full_short_url.replace(/^http[s]?:\/\//, '') }}
                             </a>
                             <CopyIcon :value="item.full_short_url"/>
                         </td>
