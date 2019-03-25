@@ -2,9 +2,7 @@
     <div class="h-100">
         <Navbar/>
         <Sidebar/>
-        <div class="mt-1">
-            <router-view></router-view>
-        </div>
+        <router-view class="main"></router-view>
     </div>
 </template>
 
@@ -36,5 +34,10 @@
 </script>
 
 <style scoped lang="scss">
-
+    @import '../sass/variables';
+    .main {
+        width: $main-width;
+        margin-left: $sidebar-width;
+        margin-top: 15px;
+    }
 </style>
