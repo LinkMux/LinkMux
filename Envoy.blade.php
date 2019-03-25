@@ -12,6 +12,7 @@
     yarn install
     yarn run prod
     php artisan migrate
+    php artisan optimize:clear
     php artisan config:cache
     php artisan route:cache
     php artisan up
