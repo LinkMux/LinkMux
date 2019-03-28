@@ -4,20 +4,17 @@ namespace App\Repositories;
 
 use App\Models\Shortlink;
 use App\Models\User;
-use App\Validators\ShortlinkValidator;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Prettus\Repository\Criteria\RequestCriteria;
 use Prettus\Repository\Eloquent\BaseRepository;
 
 /**
  * Class ShortlinkRepositoryEloquent.
- *
- * @package namespace App\Repositories;
  */
 class ShortlinkRepositoryEloquent extends BaseRepository implements ShortlinkRepository
 {
     /**
-     * Specify Model class name
+     * Specify Model class name.
      *
      * @return string
      */
@@ -26,9 +23,8 @@ class ShortlinkRepositoryEloquent extends BaseRepository implements ShortlinkRep
         return Shortlink::class;
     }
 
-
     /**
-     * Boot up the repository, pushing criteria
+     * Boot up the repository, pushing criteria.
      */
     public function boot()
     {

@@ -1,7 +1,7 @@
 <?php
 
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
 
 /**
  * Class UpdateShortlinksTableSourceAndTargetName.
@@ -16,8 +16,8 @@ class UpdateShortlinksTableSourceAndTargetName extends Migration
     public function up()
     {
         Schema::table('shortlinks', function (Blueprint $table) {
-            $table->renameColumn("source", "hash");
-            $table->renameColumn("target", "original_url");
+            $table->renameColumn('source', 'hash');
+            $table->renameColumn('target', 'original_url');
         });
     }
 
@@ -29,8 +29,8 @@ class UpdateShortlinksTableSourceAndTargetName extends Migration
     public function down()
     {
         Schema::table('shortlinks', function (Blueprint $table) {
-            $table->renameColumn("hash", "source");
-            $table->renameColumn("original_url", "target");
+            $table->renameColumn('hash', 'source');
+            $table->renameColumn('original_url', 'target');
         });
     }
 }

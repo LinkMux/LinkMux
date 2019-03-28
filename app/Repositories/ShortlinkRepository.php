@@ -8,8 +8,6 @@ use Prettus\Repository\Contracts\RepositoryInterface;
 
 /**
  * Interface ShortlinkRepository.
- *
- * @package namespace App\Repositories;
  */
 interface ShortlinkRepository extends RepositoryInterface
 {

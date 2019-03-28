@@ -1,4 +1,5 @@
 <?php
+
 return [
     'generator' => [
         'basePath'      => app()->path(),
