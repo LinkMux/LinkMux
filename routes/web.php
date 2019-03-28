@@ -11,8 +11,7 @@
 |
 */
 
-
-Route::get("/", "MuxController@dashboard");
+Route::get('/', 'MuxController@dashboard');
 
 Route::group(['prefix' => 'auth'], function () {
     Route::get('/login', 'Auth\LoginController@showLoginForm');
@@ -25,8 +24,8 @@ Route::group(['prefix' => 'api'], function () {
 });
 
 Route::group(['prefix' => 'dashboard'], function () {
-    Route::get("/", "IndexController@index");
-    Route::get("/{path}", "IndexController@index")->where("path", "(.*)");
+    Route::get('/', 'IndexController@index');
+    Route::get('/{path}', 'IndexController@index')->where('path', '(.*)');
 });
 
-Route::get("/{path}", "MuxController@index")->where("path", "(.*)");
+Route::get('/{path}', 'MuxController@index')->where('path', '(.*)');

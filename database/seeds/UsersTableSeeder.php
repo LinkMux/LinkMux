@@ -13,8 +13,8 @@ class UsersTableSeeder extends Seeder
     public function run()
     {
         User::create([
-            'name' => 'Admin',
-            'email' => 'admin@lmux.dev',
+            'name'     => 'Admin',
+            'email'    => 'admin@lmux.dev',
             'password' => Hash::make('Ab123456'),
         ]);
         factory(User::class, 10)->create();

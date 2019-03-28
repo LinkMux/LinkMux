@@ -40,7 +40,7 @@ class LoginController extends Controller
 
     /**
      * Return the failed login response instance.
-     * 
+     *
      * @return Response
      */
     protected function sendFailedLoginResponse(Request $request)
@@ -49,13 +49,12 @@ class LoginController extends Controller
     }
 
     /**
-     * Redirect to login page after logout
-     * 
+     * Redirect to login page after logout.
+     *
      * @return Response
      */
     protected function loggedOut(Request $request)
     {
         return redirect()->intended('/auth/login');
     }
-
 }

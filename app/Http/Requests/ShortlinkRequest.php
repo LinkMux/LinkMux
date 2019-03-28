@@ -22,14 +22,14 @@ class ShortlinkRequest extends ApiRequest
     public function rules()
     {
         return [
-            'original_url' => 'required|string'
+            'original_url' => 'required|string',
         ];
     }
 
     public function attributes()
     {
         return [
-            'original_url' => __("shortlink.original_url")
+            'original_url' => __('shortlink.original_url'),
         ];
     }
 }

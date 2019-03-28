@@ -19,6 +19,7 @@ class ShortlinkController extends Controller
 
     /**
      * ShortlinkController constructor.
+     *
      * @param ShortlinkService $shortlinkService
      */
     public function __construct(ShortlinkService $shortlinkService)
@@ -39,13 +40,14 @@ class ShortlinkController extends Controller
         $user = auth()->user();
         $shortlinks = $this->shortlinkService->getShortlink($user);
 
-        return $this->returnSuccess("Success", $shortlinks);
+        return $this->returnSuccess('Success', $shortlinks);
     }
 
     /**
      * Store a newly created resource in storage.
      *
      * @param ShortlinkRequest $request
+     *
      * @return \Illuminate\Http\JsonResponse
      */
     public function store(ShortlinkRequest $request)
@@ -53,13 +55,14 @@ class ShortlinkController extends Controller
         $user = auth()->user();
         $this->shortlinkService->store($user, $request->validated());
 
-        return $this->returnSuccess("Success");
+        return $this->returnSuccess('Success');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Shortlink  $shortlink
+     * @param \App\Models\Shortlink $shortlink
+     *
      * @return \Illuminate\Http\Response
      */
     public function show(Shortlink $shortlink)
@@ -70,8 +73,9 @@ class ShortlinkController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Shortlink  $shortlink
+     * @param \Illuminate\Http\Request $request
+     * @param \App\Models\Shortlink    $shortlink
+     *
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Shortlink $shortlink)
@@ -82,7 +86,8 @@ class ShortlinkController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Shortlink  $shortlink
+     * @param \App\Models\Shortlink $shortlink
+     *
      * @return \Illuminate\Http\Response
      */
     public function destroy(Shortlink $shortlink)

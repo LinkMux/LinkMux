@@ -7,7 +7,6 @@ use App\Services\ShortlinkService;
 
 class MuxController extends Controller
 {
-
     /**
      * @var ShortlinkService
      */
@@ -15,6 +14,7 @@ class MuxController extends Controller
 
     /**
      * MuxController constructor.
+     *
      * @param ShortlinkService $shortlinkService
      */
     public function __construct(ShortlinkService $shortlinkService)
@@ -24,6 +24,7 @@ class MuxController extends Controller
 
     /**
      * @param string $path
+     *
      * @return string
      */
     public function index(string $path)
@@ -40,6 +41,7 @@ class MuxController extends Controller
 
     /**
      * Redirect to dashboard page.
+     *
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
     public function dashboard()

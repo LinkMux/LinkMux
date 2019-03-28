@@ -12,6 +12,7 @@ class ShortlinkServiceEloquent implements ShortlinkService
 {
     /**
      * 每個 Hash 長度的最大搜尋次數，如果超過這個次數會加長度加一，並寫 Log 。
+     *
      * @var int
      */
     protected $maxHashSearchTime = 3;
@@ -23,6 +24,7 @@ class ShortlinkServiceEloquent implements ShortlinkService
 
     /**
      * ShortlinkServices constructor.
+     *
      * @param ShortlinkRepository $repository
      */
     public function __construct(ShortlinkRepository $repository)
@@ -32,7 +34,7 @@ class ShortlinkServiceEloquent implements ShortlinkService
 
     public function findPublicShortlink(string $hash): ?Shortlink
     {
-        return $this->repository->findByField("hash", $hash)->first();
+        return $this->repository->findByField('hash', $hash)->first();
     }
 
     public function getShortlink(User $user, $limit = 15): LengthAwarePaginator
@@ -41,9 +43,11 @@ class ShortlinkServiceEloquent implements ShortlinkService
     }
 
     /**
-     * 建立 ShortLink 資料
+     * 建立 ShortLink 資料.
+     *
      * @param User  $user
      * @param array $data
+     *
      * @return mixed
      */
     public function store(User $user, array $data)
@@ -55,6 +59,7 @@ class ShortlinkServiceEloquent implements ShortlinkService
 
     /**
      * 取得一個尚未使用的 Hash 。
+     *
      * @return string
      */
     private function getUniqueHash(): string
@@ -62,12 +67,12 @@ class ShortlinkServiceEloquent implements ShortlinkService
         $searchTime = 0;
         $increaseLength = 0;
         do {
-            $hash = Str::random(config("app.short_hash_length") + $increaseLength);
+            $hash = Str::random(config('app.short_hash_length') + $increaseLength);
             $searchTime++;
             if ($searchTime >= $this->maxHashSearchTime) {
                 $increaseLength++;
                 $searchTime = 0;
-                logger("短網址 Hash 出現高碰撞機會，請增加長度。");
+                logger('短網址 Hash 出現高碰撞機會，請增加長度。');
             }
         } while ($this->findPublicShortlink($hash));
 
